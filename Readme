@@ -1,0 +1,62 @@
+# 🎵 Bot Descargador de TikTok para Telegram
+
+Bot que recibe links de TikTok y envía el video sin marca de agua directo al chat.
+
+---
+
+## 📋 PASO 1 — Crear el bot en Telegram
+
+1. Abre Telegram y busca **@BotFather**
+2. Manda `/newbot`
+3. Ponle un nombre: ej. `TikTok Downloader`
+4. Ponle un username: ej. `MiTikTokBot`
+5. **Copia el TOKEN** que te da (parece: `123456789:ABCdef...`)
+
+---
+
+## 📋 PASO 2 — Subir a Railway
+
+1. Ve a [railway.app](https://railway.app) y crea cuenta con GitHub
+2. Crea un nuevo proyecto → **Deploy from GitHub repo**
+3. Sube estos archivos a un repo de GitHub:
+   - `bot.py`
+   - `requirements.txt`
+   - `Procfile`
+4. Conecta el repo en Railway
+
+---
+
+## 📋 PASO 3 — Configurar variable de entorno
+
+En Railway, ve a tu proyecto → **Variables** → Agrega:
+
+```
+BOT_TOKEN = 123456789:ABCdef...  ← el token de BotFather
+```
+
+---
+
+## 📋 PASO 4 — Deploy
+
+Railway detecta el `Procfile` automáticamente.
+El bot se inicia con: `python bot.py`
+
+Verifica en los **Logs** que diga:
+```
+🤖 Bot iniciado y escuchando...
+```
+
+---
+
+## 🚀 Uso
+
+Manda cualquier link de TikTok al bot:
+- `https://vm.tiktok.com/xxxxx` ← links cortos ✅
+- `https://www.tiktok.com/@usuario/video/123456` ← links largos ✅
+
+---
+
+## ⚠️ Límite de Telegram
+
+Telegram tiene límite de **50MB por archivo**.
+Videos muy largos no se podrán enviar.
